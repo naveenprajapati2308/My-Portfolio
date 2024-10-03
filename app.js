@@ -46,3 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
         circle.style.setProperty("--progress", `${progress}deg`); // Updates the --progress variable for conic-gradient
     });
 });
+var typed = new Typed(".text-three",  {
+    strings: [
+        "Software Developer",
+        "Full-stack developer",
+        "Emerging coder"
+    ],
+    typeSpeed: 110,
+    backSpeed: 110,
+    backDelay: 990,
+    loop: true
+})
