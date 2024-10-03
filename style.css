@@ -55,7 +55,7 @@ nav .navbar .logo a{
   /* border: 2px solid black; */
   position: relative;
    top: 0px; 
-   left: 30px; 
+   left: 130px; 
    right: 30px;
   transition: all;
   transition-duration: 0.5s;
@@ -78,7 +78,7 @@ nav .navbar .menu{
   display: flex;
   position: relative;
   text-decoration: none;
-  font-size:large;
+  font: size 20px;;
 }
 nav .navbar .menu li{
   list-style: none;
@@ -105,10 +105,11 @@ nav.sticky .menu a:hover{
   color: #0E2431;
 }
 .navbar .media-icons a{
-  color: #4070f4;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 25px;
   margin: 0 6px;
   display:inline-block;
+  justify-content: space-between;
 }
 /* nav.sticky .media-icons a{
   color: #FFF;
@@ -164,18 +165,23 @@ nav.sticky .menu-btn{
   font-size: 65px;
   font-weight: 750;
   margin-left: -3px;
+}.home .text-two p{
+  color: white;
+  font-size: 74px ;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .home .text-three{
-  font-size: 40px;
+  font-size: 45px;
   margin: 5px 0;
-  color: #e09ed8;
-  font-style: italic;
-  font-weight: 550;
+  color:  #0ef;
+  font-style: normal;
+  font-weight: 750;
 }
 .home .text-four{
-  font-size: 23px;
+  font-size: 25px;
   margin: 5px 0;
-  color: #ebeb67;
+  color:  #FFCC00;
 }
 .home .button{
   margin: 14px 0;
@@ -534,7 +540,7 @@ section .button button:hover{
 }
 
  /* Custom Scroll Bar CSS */
-:
+
 /* Education Section Styling */
 .skills {
   background: #1f242d;
