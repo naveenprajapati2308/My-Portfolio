@@ -30,7 +30,7 @@ nav {
   z-index: 1000;
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
-  position: fixed;
+/*   position: fixed; */
   background-color: #2e323a;
   border-bottom: 4px solid #1c2f27;
   height:140px;
