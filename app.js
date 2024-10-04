@@ -8,7 +8,7 @@ home_button.addEventListener('click', () => {
 // Blinking "Hello" Tag
 let hello = document.querySelector('#helloTag');
 
-function changeColor(color, delay = 1000) {
+function changeColor(color, delay = 400) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             hello.style.color = color;
@@ -26,7 +26,6 @@ async function colorBlinker() {
     await changeColor('aqua');
     await changeColor('purple', 1000);
     await changeColor('aqua');
-    
 }
 
 async function infinite() {
@@ -36,24 +35,29 @@ async function infinite() {
 }
 infinite();
 
-// Circular Progress Bar Handling for Skills
-document.addEventListener("DOMContentLoaded", function () {
-    const circles = document.querySelectorAll(".circle");
+// Typing Effect for Skills Section
+var typed = new Typed(".text-three", {
+    strings: ["Full-stack developer", "Software Engineer", "Emerging coder"],
+    typeSpeed: 100,
+    backSpeed: 50,
+    loop: true,
+    fadeOut: true, /* Ensures smooth fade out when typing ends */
+    showCursor: true
+  });
 
-    circles.forEach(circle => {
-        let percentage = circle.getAttribute("data-percent");
-        let progress = (percentage / 100) * 360; // Converts percentage to degrees
-        circle.style.setProperty("--progress", `${progress}deg`); // Updates the --progress variable for conic-gradient
-    });
+// Handling Navbar Hamburger Button Toggle (if needed)
+const menuBtn = document.querySelector('.menu-btn');
+const navbar = document.querySelector('.navbar');
+const cancelBtn = document.querySelector('.cancel-btn');
+
+menuBtn.addEventListener('click', () => {
+    navbar.classList.add('active');
+    menuBtn.style.display = 'none';  // Hide the menu button
+    cancelBtn.style.display = 'block'; // Show the cancel button
 });
-var typed = new Typed(".text-three",  {
-    strings: [
-        "Software Developer",
-        "Full-stack developer",
-        "Emerging coder"
-    ],
-    typeSpeed: 110,
-    backSpeed: 110,
-    backDelay: 990,
-    loop: true
-})
+
+cancelBtn.addEventListener('click', () => {
+    navbar.classList.remove('active');
+    menuBtn.style.display = 'block';  // Show the menu button
+    cancelBtn.style.display = 'none'; // Hide the cancel button
+});
