@@ -37,7 +37,7 @@ infinite();
 
 // Typing Effect for Skills Section
 var typed = new Typed(".text-three", {
-    strings: ["Full-stack developer", "Software Engineer", "Emerging coder"],
+    strings: ["Full-stack developer", "Software Developer", ""],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true,
