@@ -29,73 +29,58 @@ body {
 }
 
 /* Basic Navbar Styles */
-nav {
+.navbar {
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 20px;
   z-index: 998;
   transition: all 0.3s ease;
-  font-family: 'Ubuntu', sans-serif;
-  position: fixed;
-  background-color: #2e323a;
-  border-bottom: 4px solid #5a6560;
-  height: 120px;
-}
-
-nav.sticky {
-  background: #3156c5;
-  padding: 13px 0;
-}
-
-/* Navbar container */
-nav .navbar {
-  width: 100%;
-  padding: 8px 10%;
+  border-bottom: 4px solid #252726;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  background-color: #4d4d4d;
+  top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
 }
 
-/* Styling the logo */
-nav .navbar .logo a {
-  font-weight: 600;
-  font-size: 30px;
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: -30px;
-  /* margin-top: 4px; */
-  transition: all 0.5s ease-out;
+.navbar .logo img {
+  box-shadow: none !important;
+  /* Explicitly disable shadow on logo */
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect for logo */
-.navbar .logo a:hover {
-  color: rgb(35, 241, 241);
-  font-size: 35px;
+.navbar .logo img:hover {
+  transform: scale(1.35);
+  /* Slight zoom on hover */
 }
+
 
 /* Menu styling */
-nav .navbar .menu {
+.navbar .menu {
   display: flex;
   gap: 30px;
-  list-style: none;
 
 }
 
-nav .navbar .menu li {
+.navbar .menu li {
   list-style: none;
   margin: 0 8px;
 }
 
 .navbar .menu a {
-  font-size: 22px;
-  font-weight: 500;
-  color: #f3f7fa;
+  font-size: 25px;
+  font-weight: 600;
+  color: #15f1f1;
   text-decoration: none;
   transition: color 0.4s ease;
+  margin-top: 20px;
 }
 
 .navbar .menu a:hover {
-  color: #0ef;
+  /* color: #0ef; */
+
+  color: #1662f0;
+  ;
 }
 
 /* Sticky effect */
@@ -103,35 +88,32 @@ nav.sticky .menu a {
   color: #424040;
 }
 
-nav.sticky .menu a:hover {
-  color: #0E2431;
-}
-
 /* Media icons alignment */
-.navbar .media-icons {
+nav .navbar .media-icons {
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 .navbar .media-icons a {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 20px;
   transition: color 0.3s ease;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: transparent;
   border: 2px solid rgb(151, 209, 213);
   border-radius: 50%;
   font-size: 20px;
   text-decoration: none;
-  margin: 30px 15px 30px 0;
+  margin: 30px 10px 30px 10px;
   transition: .5s ease;
   opacity: 1;
   animation: slideLeft 1s ease forwards;
   animation-delay: calc(.1s * var(--i));
+
 }
 
 
@@ -139,11 +121,11 @@ nav.sticky .menu a:hover {
   /* color: #0ef; */
   background: #0ef;
   color: #1f242d;
-  box-shadow: 0 0 20px #0ef;
+  box-shadow: 0 0 35px #0ef;
 }
 
 /* Menu button for mobile (currently hidden as per default styling) */
-nav .menu-btn {
+.menu-btn {
   position: absolute;
   color: #4070f4;
   right: 30px;
@@ -195,7 +177,10 @@ nav.sticky .menu-btn {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
 .home .text-one {
@@ -269,6 +254,54 @@ nav.sticky .menu-btn {
 .home .button button a:hover {
   color: #1548d6;
 }
+
+/* Profile Image Styling */
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex: 0.5;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 450px;
+  height: 450px;
+  border: 5px solid #4070f4;
+  /* Adjust border color as needed */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+  /* Slight zoom on hover */
+}
+
+
+/* Media Query for Profile Image */
+@media (max-width: 1024px) {
+  .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
@@ -553,7 +586,7 @@ section .button button:hover {
   border-radius: 12px;
   width: 400px;
   /* Adjust width as needed */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Title styling */
@@ -572,7 +605,7 @@ section .button button:hover {
   height: 3px;
   background: #4070f4;
   margin: 8px auto 0;
-  /* Removed the extra width and blue line */
+
 }
 
 .contact .text .topic {
@@ -600,13 +633,12 @@ section .button button:hover {
   font-size: 16px;
   color: #ffffff;
   width: 35%;
-  /* Align label to the left */
+
   text-align: left;
 }
 
 .mainform input {
   width: 60%;
-  /* Align input to the right */
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #4070f4;
@@ -709,9 +741,9 @@ footer {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   justify-content: space-between;
-
+  ;
   flex-direction: column;
-  row-gap: 30px;
+  /* row-gap: 30px; */
   margin: 0px;
   padding-block: 40px 60px;
   display: flex;
@@ -721,6 +753,11 @@ footer .img {
   display: flex;
   filter: invert();
 
+}
+
+footer .img img:hover {
+  transform: scale(1.35);
+  /* Slight zoom on hover */
 }
 
 footer .footer-outer {
@@ -760,6 +797,7 @@ footer .text span a:hover {
 .footer_menu_list {
   list-style: none;
   font-size: 25px;
+  margin: 0 15px;
 
 }
 
@@ -769,6 +807,8 @@ footer .text span a:hover {
   color: rgb(126, 235, 235);
   font-weight: 600;
   margin-inline: 10px;
+  /* font-size: 18px; */
+
 
 }
 
@@ -776,14 +816,11 @@ footer .text span a:hover {
   color: #5145f8;
 }
 
-section:last-of-type {
-  margin-bottom: 0;
-  /* Make sure the last section doesn't add extra space */
-}
 
-* Media icons alignment */ footer.media-icons {
+/* Media icons alignment */
+footer.media-icons {
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 footer .media-icons a {
@@ -805,7 +842,7 @@ footer .media-icons a {
   opacity: 1;
   animation: slideLeft 1s ease forwards;
   animation-delay: calc(.1s * var(--i));
-  gap: 20px;
+  gap: 30px;
 }
 
 
@@ -816,6 +853,7 @@ footer .media-icons a:hover {
   box-shadow: 0 0 20px #0ef;
   font-weight: 600;
 }
+
 
 
 
@@ -847,6 +885,11 @@ footer .media-icons a:hover {
   nav .navbar .media-icons {
     display: none;
   }
+
+  .navbar {
+    position: fixed;
+  }
+
 
 
 }
@@ -882,14 +925,14 @@ footer .media-icons a:hover {
     padding-top: 120px;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
     margin: 10px 0;
   }
 
-  nav .navbar .menu {
+  .navbar .menu {
     position: fixed;
     left: -100%;
     top: 0;
@@ -911,7 +954,7 @@ footer .media-icons a:hover {
     left: 0;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 22px;
     display: block;
     color: #fff;
@@ -926,13 +969,18 @@ footer .media-icons a:hover {
     display: none;
   }
 
+  .navbar.logo img {
+    width: 70%;
+
+  }
+
 
 }
 
 @media (max-width: 1024px) {
-  .navbar.logo a {
+  .navbar.logo img {
+    width: 70%;
 
-    font-weight: 400px;
   }
 
   .about .about-details {
@@ -956,7 +1004,7 @@ footer .media-icons a:hover {
     width: calc(100% / 2 - 20px);
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: flex;
     /* Show icons in larger views */
   }
@@ -969,7 +1017,7 @@ footer .media-icons a:hover {
     width: 250px;
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: none;
   }
 
@@ -999,14 +1047,14 @@ footer .media-icons a:hover {
     padding-top: 120px;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
     margin: 10px 0;
   }
 
-  nav .navbar .menu {
+  .navbar .menu {
     position: fixed;
     left: -100%;
     top: 0;
@@ -1028,7 +1076,7 @@ footer .media-icons a:hover {
     left: 0;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
@@ -1039,16 +1087,16 @@ footer .media-icons a:hover {
     color: #54afe0;
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: none;
   }
 
-  nav .menu-btn,
+  .menu-btn,
   .navbar .menu .cancel-btn {
     display: block;
   }
 
-  nav .menu-btn.active {
+  .menu-btn.active {
     display: none;
   }
 
@@ -1071,9 +1119,9 @@ footer .media-icons a:hover {
   }
 
   footer .img img {
-    width: 80px;
+    width: 75px;
     /* Reduced size for tablets */
-    height: 80px
+    height: 75px
   }
 }
 
@@ -1093,7 +1141,7 @@ footer .media-icons a:hover {
     font-size: 16px;
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: none;
   }
 
@@ -1127,7 +1175,7 @@ footer .media-icons a:hover {
     padding-top: 140px;/
   }
 
-  nav .navbar .menu {
+  .navbar .menu {
     position: fixed;
     left: -100%;
     top: 0;
@@ -1145,7 +1193,7 @@ footer .media-icons a:hover {
     left: 0;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
@@ -1156,16 +1204,16 @@ footer .media-icons a:hover {
     color: #54afe0;
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: none;
   }
 
-  nav .menu-btn,
+  .menu-btn,
   .navbar .menu .cancel-btn {
     display: block;
   }
 
-  nav .menu-btn.active {
+  .menu-btn.active {
     display: none;
   }
 
@@ -1210,15 +1258,15 @@ footer .media-icons a:hover {
 }
 
 @media (max-width: 750px) {
-  nav .navbar {
-    width: 90%;
+  .navbar {
+    width: 100%;
   }
 
   .home {
     padding-top: 100px;
   }
 
-  nav .navbar .menu {
+  .navbar .menu {
     position: fixed;
     left: -100%;
     top: 0;
@@ -1236,7 +1284,7 @@ footer .media-icons a:hover {
     left: 0;
   }
 
-  nav .navbar .menu a {
+  .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
@@ -1247,7 +1295,7 @@ footer .media-icons a:hover {
     color: #54afe0;
   }
 
-  nav .navbar .media-icons {
+  .navbar .media-icons {
     display: none;
   }
 
@@ -1301,7 +1349,9 @@ footer .media-icons a:hover {
 
   footer {
     flex-direction: column;
-    padding: 15px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .footer_menu_list {
@@ -1309,11 +1359,12 @@ footer .media-icons a:hover {
     flex-direction: column;
     text-align: center;
     margin: 10px 0;
+    gap: 5px;
   }
 
   .footer_menu_list a {
-    display: block;
-    font-size: 14px;
+    /* display: block; */
+    font-size: 8px;
     /* Smaller font for mobile */
     margin: 5px 0;
     /* Vertical space for better spacing */
@@ -1323,6 +1374,7 @@ footer .media-icons a:hover {
     flex-direction: row;
     justify-content: center;
     gap: 6px;
+    display: none;
     /* Reduced gap between icons for mobile */
   }
 
@@ -1333,10 +1385,11 @@ footer .media-icons a:hover {
   }
 
   footer .img img {
-    width: 60px;
+    width: 50px;
     /* Smaller logo size for mobile devices */
     height: auto;
   }
+
 
 }
 
@@ -1360,6 +1413,45 @@ footer .media-icons a:hover {
   .skills-details .boxes .per {
     font-size: 50px;
     color: #4070f4;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .footer_menu_list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer_menu_list a {
+    display: block;
+    font-size: 12px;
+    /* Smaller font for mobile */
+    margin: 5px 0;
+    /* Vertical space for better spacing */
+  }
+
+  footer .media-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+    /* Reduced gap between icons for mobile */
+  }
+
+  footer .text {
+    margin-top: 10px;
+    font-size: 14px;
+    /* Reduced font size for mobile */
+  }
+
+  footer .img img {
+    width: 50px;
+    /* Smaller logo size for mobile devices */
+    height: auto;
   }
 }
 
@@ -1450,6 +1542,7 @@ html {
 body {
   background-color: #1f242d;
   color: #fff;
-  /* padding-top: 80px;  */
+  /* padding-top: 80px; */
   overflow-x: hidden;
+  row-gap: 0px;
 }
